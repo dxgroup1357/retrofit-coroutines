@@ -1,5 +1,6 @@
 package com.mytasklist.androidandkotlinweekly.manager
 
+import com.mytasklist.androidandkotlinweekly.apisecond.ApiServiceBored
 import com.mytasklist.androidandkotlinweekly.repository.APIService
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,10 @@ class ApiModule {
     @Singleton
     fun provideApi(retrofit: Retrofit): APIService =
         retrofit.create(APIService::class.java)
+
+
+    @Provides
+    @Singleton
+    fun provideApiBored(retrofit: Retrofit): ApiServiceBored =
+        retrofit.create(ApiServiceBored::class.java)
 }

@@ -1,30 +1,52 @@
 package com.mytasklist.androidandkotlinweekly.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.androidandkotlinweekly.brinfotech.databinding.ActivityHomeBinding
+import com.mytasklist.androidandkotlinweekly.ui.bored.BoredActivity
+import com.mytasklist.androidandkotlinweekly.ui.database.SqliteActivity
+import com.mytasklist.androidandkotlinweekly.ui.designpatterndemo.DesignPatternActivity
+import com.mytasklist.androidandkotlinweekly.viewextenstion.startNewActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity(){
-    private lateinit var activityMainBinding: ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
     private lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityMainBinding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-        setContentView(activityMainBinding.root)
+        setContentView(binding.root)
+        binding.vm = viewModel
         eventListener()
     }
 
     private fun eventListener() {
         viewModel.actionEvent.observe(this){
             when(it){
-                HomeViewContract.OnTextViewDemo-> {
+               is HomeViewContract.OnTextViewDemo-> {
 
                 }
+
+                is HomeViewContract.OnBoredActivityDemo-> {
+                    Log.d("myTag:","OnBoredActivityDemo")
+                    startNewActivity<BoredActivity>()
+                }
+
+                is HomeViewContract.OnDesignPatternEvent-> {
+                    Log.d("myTag:","OnBoredActivityDemo")
+                    startNewActivity<DesignPatternActivity>()
+                }
+
+                is HomeViewContract.OnSqliteEvent-> {
+                    Log.d("myTag:","OnBoredActivityDemo")
+                    startNewActivity<SqliteActivity>()
+                }
+                else -> {}
             }
         }
     }

@@ -27,9 +27,20 @@ class HomeViewModel @Inject constructor(val retrofitInstance: APIService) : View
         actionEvent.postValue(HomeViewContract.OnTextViewDemo)
     }
 
+    fun onBoredActionEvent(){
+        actionEvent.postValue(HomeViewContract.OnBoredActivityDemo)
+    }
+    fun onDesignPatternEvent(){
+        actionEvent.postValue(HomeViewContract.OnDesignPatternEvent)
+    }
+
+    fun onSqliteEvent(){
+        actionEvent.postValue(HomeViewContract.OnSqliteEvent)
+    }
+
     init {
         //getMoviesFromAPI()
-        addUsers()
+        //addUsers()
     }
 
     override fun onCleared() {
