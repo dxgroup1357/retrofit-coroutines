@@ -4,6 +4,7 @@ package com.mytasklist.androidandkotlinweekly.manager/*    const val User_Testin
 import android.annotation.SuppressLint
 import android.content.Context
 import com.mytasklist.androidandkotlinweekly.BASE_URL
+import com.mytasklist.androidandkotlinweekly.BASE_URL_BORED
 import com.mytasklist.androidandkotlinweekly.repository.BaseInterceptor
 import dagger.Module
 import dagger.Provides
@@ -40,7 +41,7 @@ class NetworkModule {
         client: OkHttpClient
     ): Retrofit = Retrofit
         .Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(BASE_URL_BORED)
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()

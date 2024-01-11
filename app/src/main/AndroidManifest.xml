@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,11 @@
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.main.MainActivity" />
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.textvIewdemos.TextViewDemoActivity" />
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.entries.EntriesActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.bored.BoredActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.designpatterndemo.DesignPatternActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.addevent.AddEventActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.database.SqliteActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.viewevent.ViewEventActivity" />
     </application>
 
 </manifest>

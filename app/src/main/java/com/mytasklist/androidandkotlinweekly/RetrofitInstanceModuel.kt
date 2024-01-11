@@ -3,6 +3,7 @@ package com.mytasklist.androidandkotlinweekly
 
 //const val BASE_URL = "http://restapi.adequateshop.com/api/"
 const val BASE_URL = "https://api.publicapis.org/"
+const val BASE_URL_BORED = "http://www.boredapi.com/api/"
 
 /*
 @Module

@@ -27,6 +27,7 @@ class TextViewDemoActivity : AppCompatActivity(){
                 HomeViewContract.OnTextViewDemo -> {
 
                 }
+                else -> {}
             }
         }
     }
