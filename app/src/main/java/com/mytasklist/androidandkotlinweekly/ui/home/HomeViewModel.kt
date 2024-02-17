@@ -37,6 +37,9 @@ class HomeViewModel @Inject constructor(val retrofitInstance: APIService) : View
     fun onSqliteEvent(){
         actionEvent.postValue(HomeViewContract.OnSqliteEvent)
     }
+    fun onMapEventEvent(){
+        actionEvent.postValue(HomeViewContract.OnMapEvent)
+    }
 
     init {
         //getMoviesFromAPI()

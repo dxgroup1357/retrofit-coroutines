@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -34,6 +38,11 @@
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.addevent.AddEventActivity" />
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.database.SqliteActivity" />
         <activity android:name="com.mytasklist.androidandkotlinweekly.ui.viewevent.ViewEventActivity" />
+        <activity android:name="com.mytasklist.androidandkotlinweekly.ui.mapacitity.MapActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" />
     </application>
 
 </manifest>

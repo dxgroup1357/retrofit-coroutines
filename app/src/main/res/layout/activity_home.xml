@@ -53,6 +53,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_height="wrap_content" />
 
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnMapActivity"
+            android:layout_width="wrap_content"
+            android:text="MapActivity Demo"
+            android:onClick="@{()->vm.onMapEventEvent()}"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@+id/btnSqliteDemo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include layout="@layout/include_menu" />

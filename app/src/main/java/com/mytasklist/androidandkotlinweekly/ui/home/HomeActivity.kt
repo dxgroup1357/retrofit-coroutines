@@ -8,6 +8,7 @@ import com.androidandkotlinweekly.brinfotech.databinding.ActivityHomeBinding
 import com.mytasklist.androidandkotlinweekly.ui.bored.BoredActivity
 import com.mytasklist.androidandkotlinweekly.ui.database.SqliteActivity
 import com.mytasklist.androidandkotlinweekly.ui.designpatterndemo.DesignPatternActivity
+import com.mytasklist.androidandkotlinweekly.ui.mapacitity.MapActivity
 import com.mytasklist.androidandkotlinweekly.viewextenstion.startNewActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,19 +34,21 @@ class HomeActivity : AppCompatActivity(){
                 }
 
                 is HomeViewContract.OnBoredActivityDemo-> {
-                    Log.d("myTag:","OnBoredActivityDemo")
                     startNewActivity<BoredActivity>()
                 }
 
                 is HomeViewContract.OnDesignPatternEvent-> {
-                    Log.d("myTag:","OnBoredActivityDemo")
                     startNewActivity<DesignPatternActivity>()
                 }
 
                 is HomeViewContract.OnSqliteEvent-> {
-                    Log.d("myTag:","OnBoredActivityDemo")
                     startNewActivity<SqliteActivity>()
                 }
+
+                is HomeViewContract.OnMapEvent-> {
+                    startNewActivity<MapActivity>()
+                }
+
                 else -> {}
             }
         }
