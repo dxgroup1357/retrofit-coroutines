@@ -1,4 +1,4 @@
-package com.example.androidmaterialdesign.coroutinesdemos
+package com.mytasklist.androidandkotlinweekly.coroutinesdemos.basic
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
