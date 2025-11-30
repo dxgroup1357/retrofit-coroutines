@@ -18,14 +18,14 @@ package com.mytasklist.androidandkotlinweekly.leetcode
  * Output: [0,1]
  * */
 
-import android.util.Log
+
 import com.google.gson.Gson
 
-fun main(){
-    val nums = intArrayOf(1,2,3,4,5)
+fun main() {
+    val nums = intArrayOf(1, 2, 3, 4, 5)
     val target = 9
 
-    val result = twoSum(nums,target)
+    val result = twoSum(nums, target)
     println("Sample One: ${Gson().toJson(result)}")
     //println("Sample One: ${result[1]}")
 }
@@ -48,18 +48,32 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
 }
 
 /*This answer not accepted on leet code*/
-fun twoSumsThird(nums: IntArray, target: Int):IntArray {
-    val map = mutableMapOf<Int,Int>()
+fun twoSumsThird(nums: IntArray, target: Int): IntArray {
+    val map = mutableMapOf<Int, Int>()
 
     for (i in nums.indices) {
-        val remainValue :Int = target - nums[i]
+        val remainValue: Int = target - nums[i]
 
-        for (j in nums.indices){
+        for (j in nums.indices) {
             val jValue = nums[j]
-            if(jValue == remainValue){
-                return intArrayOf(i,j)
+            if (jValue == remainValue) {
+                return intArrayOf(i, j)
             }
         }
     }
     return intArrayOf() //Return null if it's not found value.
+}
+
+fun twoSumFourth(nums: IntArray, target: Int): IntArray {
+    val map = mutableMapOf<Int, Int>()
+    for (i in nums.indices) {
+        val remainValue = target - nums[i]
+        if (map.containsKey(remainValue)) {
+            return intArrayOf(nums[remainValue], i)
+        }
+        map[i]=nums[i]
+    }
+    return intArrayOf()
+
+
 }
